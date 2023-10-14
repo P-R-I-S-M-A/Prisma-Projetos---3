@@ -1,9 +1,0 @@
-.Home{
-    display: flex;
-    position: relative;
-    width: 100%;
-}
-
-.Home .home-main{
-    width: calc(100% - 50px);
-}
