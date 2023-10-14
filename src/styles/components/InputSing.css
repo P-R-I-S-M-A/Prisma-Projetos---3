@@ -1,0 +1,18 @@
+.area-input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #1b1b1b;
+    color: #007aff;
+    display: flex;
+    align-items: center;
+}
+
+.area-input input{
+    width: 100%;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #dbdbdb;
+}

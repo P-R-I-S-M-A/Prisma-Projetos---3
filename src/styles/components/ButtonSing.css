@@ -1,0 +1,14 @@
+button.button-sing{
+    width: 200px;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #007aff;
+}
+
+button.button-sing:hover{
+    background-color: #006bde;
+}
