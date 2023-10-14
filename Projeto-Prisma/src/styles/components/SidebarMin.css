@@ -34,6 +34,10 @@
     bottom: 0;
 }
 
+.SidebarMin img{
+    width: 26px;
+}
+
 .Side-aux{
     width: 50px;
     height: 100%;

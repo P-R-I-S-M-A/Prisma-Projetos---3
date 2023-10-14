@@ -8,7 +8,7 @@ import SingIn from "../auth/SingIn";
 import SingUp from "../auth/SingUp";
 
 export function PrivateRoute({ component: Component, authenticated, usuario }) {
-    console.log(Component)
+
     return authenticated == true ? <Component user={usuario} auth={authenticated}/> : <SingIn/>
 
 }
