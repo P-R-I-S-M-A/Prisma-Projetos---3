@@ -5,6 +5,7 @@ import { RiQuestionLine } from 'react-icons/ri';
 import Logo from '../assents/img/logo.png';
 import LogoPrima from './LogoPrisma';
 import { OpenCloseSidebarSearch } from './SidebarSearch';
+import SidebarNotification, { OpenCloseSidebarNotification } from './SidebarNotification';
 
 export function OpenCloseSidebarMax(){
     let sidebar_max = document.querySelector('.sidebar-max');
@@ -41,7 +42,7 @@ export default function SidebarMax(props){
 
                     <Link className='li' to='/home/tasks'><TbClipboardList/><p>Tarefas</p></Link>
 
-                    <li className='li'  ><TbBell/><p>Notificações</p></li>
+                    <li className='li' onClick={OpenCloseSidebarNotification}><TbBell/><p>Notificações</p></li>
 
                 </ul>
 

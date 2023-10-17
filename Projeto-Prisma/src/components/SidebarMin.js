@@ -5,6 +5,7 @@ import { RiQuestionLine } from 'react-icons/ri';
 import Logo from '../assents/img/logo.png';
 import { OpenCloseSidebarMax } from './SidebarMax';
 import { OpenCloseSidebarSearch } from './SidebarSearch';
+import { OpenCloseSidebarNotification } from './SidebarNotification';
 
 
 
@@ -30,7 +31,7 @@ export default function SidebarMin(props){
 
                     <Link className='li' title='Tarefas' to='/home/tasks'><TbClipboardList/></Link>
 
-                    <li className='li' title='Notificações' to=''><TbBell/></li>
+                    <li className='li' title='Notificações' onClick={OpenCloseSidebarNotification}><TbBell/></li>
 
                 </ul>
 

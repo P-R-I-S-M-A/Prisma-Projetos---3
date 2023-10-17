@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { auth } from "../App";
 import { onAuthStateChanged } from "firebase/auth";
 
-import Home from "../pages/Home";
+import Main from "../pages/Main";
 import SingIn from "../auth/SingIn";
 import SingUp from "../auth/SingUp";
 
@@ -38,7 +38,7 @@ export default function RoutesApp(){
                 
                     <Routes>
 
-                        <Route path="/home/*"   element={<PrivateRoute component={Home} authenticated={authenticated} usuario={usuario}/>} />
+                        <Route exact path="/home/*"   element={<PrivateRoute component={Main} authenticated={authenticated} usuario={usuario}/>} />
                         <Route path="/"             element={<SingIn />} />
                         <Route path="/login"        element={<SingIn />} />
                         <Route path="*"             element={<SingIn />} />
