@@ -32,13 +32,13 @@ export default function SidebarMax(props){
                     
                     <li className='li' ><LogoPrima/></li>
 
-                    <li className='li' onClick={OpenCloseSidebarSearch}><TbSearch/><p>Pesquisar projeto</p></li>
+                    <li className='li' onClick={OpenCloseSidebarSearch}><TbSearch/><p>Pesquisar</p></li>
 
                     <Link className='li' to='/home' ><TbHome/><p>Home</p></Link>
 
                     <Link className='li' to='/home/projects'><TbFolder/><p>Projetos</p></Link>
 
-                    <Link className='li' to='/home/add-projects'><TbFolderPlus/><p>Novo projeto</p></Link>
+                    <Link className='li' to='/home/add-projects'><TbFolderPlus/><p>Criar projeto</p></Link>
 
                     <Link className='li' to='/home/tasks'><TbClipboardList/><p>Tarefas</p></Link>
 

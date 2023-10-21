@@ -3,7 +3,6 @@ import '../styles/components/Loading.css';
 
 
 export default function Loading(){
-    console.log('ok')
     return(
         <div className="loading-container">
             <div className="loader"></div>

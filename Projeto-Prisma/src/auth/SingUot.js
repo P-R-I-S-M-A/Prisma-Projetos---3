@@ -6,8 +6,7 @@ export default function SingOut(){
 
     return signOut(auth)
         .then(() => {
-            console.log('desconectado')
-        // O usuário foi desconectado
+            
         })
         
         .catch((error) => {

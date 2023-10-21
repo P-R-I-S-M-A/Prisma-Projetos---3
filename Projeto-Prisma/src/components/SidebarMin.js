@@ -2,7 +2,7 @@ import '../styles/components/SidebarMin.css';
 import { Link, useNavigate } from "react-router-dom";
 import { TbMenu2, TbSearch, TbFolder, TbFolderPlus, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome } from "react-icons/tb";
 import { RiQuestionLine } from 'react-icons/ri';
-import Logo from '../assents/img/logo.png';
+import Logo from '../assents/img/prisma_branco_v2.png';
 import { OpenCloseSidebarMax } from './SidebarMax';
 import { OpenCloseSidebarSearch } from './SidebarSearch';
 import { OpenCloseSidebarNotification } from './SidebarNotification';
@@ -21,7 +21,7 @@ export default function SidebarMin(props){
                 <ul>
                     <li className='li' title='Expandir' onClick={OpenCloseSidebarMax}><TbMenu2/></li>
 
-                    <li className='li' title='Pesquisar projeto' onClick={OpenCloseSidebarSearch}><TbSearch/></li>
+                    <li className='li' title='Pesquisar' onClick={OpenCloseSidebarSearch}><TbSearch/></li>
 
                     <Link className='li' title='Home' to='/home' ><TbHome/></Link>
 

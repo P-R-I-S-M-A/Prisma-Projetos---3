@@ -9,7 +9,7 @@
 
 .login-logout .form{
     width: 100%;
-    max-width: 360px;
+    max-width: 380px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,7 +17,8 @@
     padding: 20px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     border-radius: 10px;
     background-color: #212121;
     border: 1px solid rgb(56, 56, 56);

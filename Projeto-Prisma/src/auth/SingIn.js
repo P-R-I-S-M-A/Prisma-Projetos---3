@@ -2,17 +2,19 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../App";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { TbUser, TbLock } from "react-icons/tb";
+import { TbMail, TbLock } from "react-icons/tb";
 import InputSing from "../components/InputSing";
 import ButtonSing from "../components/ButtonSing";
 import LogoPrima from "../components/LogoPrisma";
 import '../styles/auth/LoginLogout.css';
+import Loading from "../components/Loading";
 
 export default function SingIn(props){
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
     
     const handleLogin = async () => {
         if(!email | !senha){
@@ -20,13 +22,16 @@ export default function SingIn(props){
             return;
         }
 
+        setLoading(true);
+
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, senha);
             const user = userCredential.user;
             navigate('/home')
             
         } catch (error) {
-            console.log(error.code)
+            setLoading(false);
+            
             switch (error.code) {
                 case 'auth/invalid-login-credentials':
                     return setError('Email ou senha incorreto.');
@@ -34,6 +39,8 @@ export default function SingIn(props){
                     return setError('Ocorreu um erro ao entrar na conta.');
             }
         }
+
+        setLoading(false);
     }
 
     return(
@@ -44,7 +51,7 @@ export default function SingIn(props){
             <div className="form">
                 <h1>Acesse sua conta</h1>
 
-                <InputSing icon={<TbUser/>} type={'email'} placeholder={'Email'} value={email} onChange={(e)=> [setEmail(e.target.value), setError("")]}/>
+                <InputSing icon={<TbMail/>} type={'email'} placeholder={'Email'} value={email} onChange={(e)=> [setEmail(e.target.value), setError("")]}/>
 
                 <InputSing icon={<TbLock/>} type={'password'} placeholder={'Senha'} value={senha} onChange={(e)=> [setSenha(e.target.value), setError("")]}/>
 
@@ -55,6 +62,7 @@ export default function SingIn(props){
                 <span>Não tem uma conta? <Link className="link" to='/singup'>Registre-se</Link></span>
             </div>
 
+            {loading == true ?  <Loading/> : <></>}
         </div>
     );
 }

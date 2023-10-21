@@ -1,16 +1,19 @@
 /* Loading.css */
 .loading-container {
+    position: fixed;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f1f1f1;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   
   .loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border: 8px solid rgba(0, 0, 0, 0.5);
+    border-top: 8px solid #007aff;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -24,6 +27,6 @@
   
   p {
     margin-top: 10px;
-    font-weight: bold;
+    color: #e5e5e5;
   }
   

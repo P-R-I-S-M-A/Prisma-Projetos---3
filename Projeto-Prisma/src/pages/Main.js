@@ -1,6 +1,7 @@
 import '../styles/pages/Main.css';
-import SingOut from "../auth/SingUot";
+import { useState } from 'react';
 import { Route, Routes, useNavigate } from "react-router-dom";
+import SingOut from "../auth/SingUot";
 import SidebarMin from "../components/SidebarMin";
 import Projects from "./Projects";
 import AddProjects from "./AddProjetos";
@@ -11,11 +12,16 @@ import SidebarMax from "../components/SidebarMax";
 import SidebarSearch from "../components/SidebarSearch";
 import Home from "./Home";
 import SidebarNotification from '../components/SidebarNotification';
+import Loading from '../components/Loading';
 
 export default function Main(props){
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const handleLogout = async () => {
+
+      setLoading(true);
+
         try {
           await SingOut();
           navigate('/login');
@@ -23,6 +29,8 @@ export default function Main(props){
         } catch (error) {
           // Tratar erros de desconexão
         }
+
+      setLoading(false);
     }
 
     return(
@@ -47,6 +55,8 @@ export default function Main(props){
                 </Routes>
 
             </div>
+
+            {loading == true ?  <Loading/> : <></>}
 
         </div>
     );

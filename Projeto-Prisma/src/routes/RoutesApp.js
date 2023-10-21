@@ -6,6 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import Main from "../pages/Main";
 import SingIn from "../auth/SingIn";
 import SingUp from "../auth/SingUp";
+import Loading from "../components/Loading";
 
 export function PrivateRoute({ component: Component, authenticated, usuario }) {
 
@@ -17,8 +18,11 @@ export default function RoutesApp(){
 
     const [authenticated, setAuthenticated] = useState(false);
     const [usuario, setUsuario] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true)
+
         onAuthStateChanged(auth, (user) => {
         if (user) {
             setUsuario(user)
@@ -26,12 +30,15 @@ export default function RoutesApp(){
         } else {
             setAuthenticated(false);
         }
+
+        setLoading(false)
         });
 
-        
     }, [auth]);
 
     return(
+        <>
+
             <BrowserRouter>
             
                 <Fragment>
@@ -49,6 +56,10 @@ export default function RoutesApp(){
                 </Fragment>
                 
             </BrowserRouter>
+
+            {loading == true ?  <Loading/> : <></>}
+        </>
+
 
     );
 }

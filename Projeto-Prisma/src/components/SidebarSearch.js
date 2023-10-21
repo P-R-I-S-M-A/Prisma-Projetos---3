@@ -23,9 +23,9 @@ export default function SidebarSearch(){
             <div className='display-aux-sidebar-search' onClick={OpenCloseSidebarSearch}></div>
 
             <div className="sidebar-search">
-                <h1>Pesquisar projeto</h1>
+                <h1>Pesquisar</h1>
 
-                <InputSing icon={<TbSearch/>} type={'text'} placeholder={'Pesquisar'} />
+                <InputSing icon={<TbSearch/>} type={'text'} placeholder={'Pesquisar projetos ou tarefas'} />
 
                 <div className='projects-singer'></div>
             </div>
