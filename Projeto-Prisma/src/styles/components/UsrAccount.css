@@ -1,0 +1,19 @@
+.usr-main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.name{
+    border: 1px solid white;        
+}
+
+.picture{
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+}
