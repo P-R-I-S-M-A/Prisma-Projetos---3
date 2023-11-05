@@ -7,5 +7,6 @@
 
 .main .home-main{
     width: calc(100% - 50px);
+    height: 100%;
 }
 
