@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../App";
+import { auth, db } from "../App";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { collection, getDocs } from 'firebase/firestore';
+
 import { TbMail, TbLock } from "react-icons/tb";
 import InputSing from "../components/InputSing";
 import ButtonSing from "../components/ButtonSing";
@@ -9,12 +11,34 @@ import LogoPrima from "../components/LogoPrisma";
 import '../styles/auth/LoginLogout.css';
 import Loading from "../components/Loading";
 
+
 export default function SingIn(props){
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+
+    const getUsersByAge = async (uid) => {
+
+        setLoading(true);
+
+        try {
+          const querySnapshot = await getDocs(collection(db, 'Users'));
+          querySnapshot.forEach((doc) => {
+            const userData = doc.data();
+            if (userData.uid === uid) {
+              console.log('ID do documento:', doc.id);
+              console.log('Dados do documento:', userData.projetos.projeto01.projetoID);
+            }
+          });
+        } catch (error) {
+          console.error('Erro ao recuperar documentos: ', error);
+        }
+
+        setLoading(false);
+      }
+      
     
     const handleLogin = async () => {
         if(!email | !senha){
@@ -27,6 +51,9 @@ export default function SingIn(props){
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, senha);
             const user = userCredential.user;
+
+            getUsersByAge(user.uid);
+
             navigate('/home')
             
         } catch (error) {

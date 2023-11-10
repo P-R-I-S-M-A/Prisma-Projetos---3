@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../App";
+import { auth, db } from "../App";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { TbUser, TbLock, TbLockCheck, TbMail } from "react-icons/tb";
 import InputSing from "../components/InputSing";
@@ -8,20 +8,41 @@ import ButtonSing from "../components/ButtonSing";
 import LogoPrima from "../components/LogoPrisma";
 import '../styles/auth/LoginLogout.css';
 import Loading from "../components/Loading";
+import { collection, addDoc, doc } from "firebase/firestore";
 
 
 export default function SingUp(){
     const navigate = useNavigate();
 
+    const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [senhaRep, setSenhaRep] = useState("");
     const [erro, setErro] = useState("");
     const [loading, setLoading] = useState(false);
+
+    const addUserToFirestore = async (newUser, subCollectionProjects) => {
+
+        setLoading(true);
+
+        try {
+          const docRef = await addDoc(collection(db, 'Users'), newUser);
+
+          const docSubRef = doc(db, 'Users', docRef.id)
+          
+          await addDoc(collection(docSubRef, 'Projetos'), subCollectionProjects);
+
+        } catch (error) {
+
+            alert('Erro ao adicionar documento: ' + error);
+        }
+
+        setLoading(false)
+    }
     
 
     const handleRegistration = async () => {
-        if(!email | !senha | !senhaRep){
+        if(!nome | !email | !senha | !senhaRep){
             setErro('Preencha todos os campos');
             return;
         }
@@ -33,9 +54,23 @@ export default function SingUp(){
         setLoading(true);
 
         try {
-          const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
-          const user = userCredential.user;
-          navigate('/')
+            const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+            const user = userCredential.user;
+            
+            const newUser = {
+                name: nome,
+                email: email,
+                password: senha,
+                uid: user.uid,
+                projetos: {},
+                projetos_convites: {}
+            };
+
+            const subCollectionProjects = {}
+
+            addUserToFirestore(newUser, subCollectionProjects);
+
+            navigate('/')
 
         } catch (error) {
             setLoading(false)
@@ -65,7 +100,7 @@ export default function SingUp(){
             <div className="form">
                 <h1>Crie sua conta</h1>
 
-                <InputSing icon={<TbUser/>} type = {'text'} placeholder={'Nome'} value={email}/>
+                <InputSing icon={<TbUser/>} type = {'text'} placeholder={'Nome'} value={nome} onChange={(e)=> [setNome(e.target.value), setErro("")]}/>
 
                 <InputSing icon={<TbMail/>} type={'email'} placeholder={'Email'} value={email} onChange={(e)=> [setEmail(e.target.value), setErro("")]}/>
 

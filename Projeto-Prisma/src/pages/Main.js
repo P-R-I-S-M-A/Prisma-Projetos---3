@@ -1,5 +1,4 @@
 import '../styles/pages/Main.css';
-import '../styles/components/Account.css'
 import { useState } from 'react';
 import { Route, Routes, useNavigate } from "react-router-dom";
 import SingOut from "../auth/SingUot";
@@ -14,7 +13,6 @@ import SidebarSearch from "../components/SidebarSearch";
 import Home from "./Home";
 import SidebarNotification from '../components/SidebarNotification';
 import Loading from '../components/Loading';
-import UsrAccount from '../components/UsrAccount';
 
 export default function Main(props){
     const navigate = useNavigate();
@@ -44,9 +42,6 @@ export default function Main(props){
             <SidebarNotification/>
 
             <div className="home-main">
-              <div className="account">
-                <UsrAccount />
-              </div>
               
                 <Routes>
                   
@@ -61,7 +56,7 @@ export default function Main(props){
 
             </div>
 
-            {loading === true ?  <Loading/> : <></>}
+            {loading == true ?  <Loading/> : <></>}
 
         </div>
     );
