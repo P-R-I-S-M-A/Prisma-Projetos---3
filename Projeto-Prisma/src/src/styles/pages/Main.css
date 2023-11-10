@@ -1,0 +1,12 @@
+.main{
+    display: flex;
+    position: relative;
+    width: 100%;
+    color: #fff;
+}
+
+.main .home-main{
+    width: calc(100% - 50px);
+    height: 100%;
+}
+
