@@ -21,6 +21,15 @@ export function OpenCloseSidebarMax(){
     }
 }
 
+export function CloseSidebarMax(){
+    let sidebar_max = document.querySelector('.sidebar-max');
+    let display_aux = document.querySelector('.display-aux-sidebar-max');
+
+    sidebar_max.style.left = '-260px';
+    display_aux.style.display = 'none';
+}
+
+
 export default function SidebarMax(props){
 
     return(

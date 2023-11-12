@@ -15,6 +15,14 @@ export function OpenCloseSidebarNotification(){
     }
 }
 
+export function CloseSidebarNotification(){
+    let sidebar_max = document.querySelector('.sidebar-notification');
+    let display_aux = document.querySelector('.display-aux-sidebar-notification');
+
+    sidebar_max.style.left = '-500px';
+    display_aux.style.display = 'none';
+}
+
 export default function SidebarNotification(){
     return(
         <>

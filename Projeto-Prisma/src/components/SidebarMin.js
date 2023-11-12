@@ -1,6 +1,6 @@
 import '../styles/components/SidebarMin.css';
 import { Link, useNavigate } from "react-router-dom";
-import { TbMenu2, TbSearch, TbFolder, TbFolderPlus, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome } from "react-icons/tb";
+import { TbMenu2, TbSearch, TbFolder, TbFolderPlus, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome, TbChartDonut } from "react-icons/tb";
 import { RiQuestionLine } from 'react-icons/ri';
 import Logo from '../assents/img/prisma_branco_v2.png';
 import { OpenCloseSidebarMax } from './SidebarMax';
@@ -27,7 +27,7 @@ export default function SidebarMin(props){
 
                     <Link className='li' title='Projetos' to='/home/projects'><TbFolder/></Link>
 
-                    <Link className='li' title='Criar Projeto' to='/home/add-projects'><TbFolderPlus/></Link>
+                    <Link className='li' title='Estatísticas' to='/home/add-projects'><TbChartDonut/></Link>
 
                     <Link className='li' title='Tarefas' to='/home/tasks'><TbClipboardList/></Link>
 

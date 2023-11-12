@@ -17,6 +17,7 @@
     height: 100%;
     margin-top: 185px;
     margin-bottom: 0px;
+    z-index: 9;
 }
 
 .home .blocks{
