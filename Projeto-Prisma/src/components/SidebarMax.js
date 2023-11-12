@@ -1,8 +1,8 @@
 import '../styles/components/SidebarMax.css';
 import { Link, useNavigate } from "react-router-dom";
-import { TbMenu2, TbSearch, TbFolder, TbFolderPlus, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome } from "react-icons/tb";
+import { TbMenu2, TbSearch, TbFolder, TbFolderPlus, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome, TbChartDonut } from "react-icons/tb";
 import { RiQuestionLine } from 'react-icons/ri';
-import Logo from '../assents/img/logo.png';
+import Logo from '../assents/img/prisma_branco_v2.png';
 import LogoPrima from './LogoPrisma';
 import { OpenCloseSidebarSearch } from './SidebarSearch';
 import SidebarNotification, { OpenCloseSidebarNotification } from './SidebarNotification';
@@ -47,7 +47,7 @@ export default function SidebarMax(props){
 
                     <Link className='li' to='/home/projects'><TbFolder/><p>Projetos</p></Link>
 
-                    <Link className='li' to='/home/add-projects'><TbFolderPlus/><p>Criar projeto</p></Link>
+                    <Link className='li' to='/home/add-projects'><TbChartDonut/><p>Estatísticas</p></Link>
 
                     <Link className='li' to='/home/tasks'><TbClipboardList/><p>Tarefas</p></Link>
 

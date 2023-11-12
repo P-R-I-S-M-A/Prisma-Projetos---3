@@ -1,4 +1,4 @@
-import  logoPrima  from '../assents/img/logo.png';
+import  logoPrima  from '../assents/img/prisma_branco_v2.png';
 import '../styles/components/LogoPrisma.css';
 
 export default function LogoPrima(){
