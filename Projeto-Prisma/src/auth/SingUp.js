@@ -58,13 +58,15 @@ export default function SingUp(){
             const user = userCredential.user;
             
             const newUser = {
-                name: nome,
+                displayName: nome,
                 email: email,
                 password: senha,
                 uid: user.uid,
                 projetos: {},
                 projetos_convites: {}
             };
+    
+
 
             const subCollectionProjects = {}
 

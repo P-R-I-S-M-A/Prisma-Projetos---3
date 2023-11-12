@@ -18,6 +18,7 @@ export default function SingIn(props){
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    
 
     const getUsersByAge = async (uid) => {
 
@@ -51,7 +52,8 @@ export default function SingIn(props){
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, senha);
             const user = userCredential.user;
-
+            
+    
             getUsersByAge(user.uid);
 
             navigate('/home')

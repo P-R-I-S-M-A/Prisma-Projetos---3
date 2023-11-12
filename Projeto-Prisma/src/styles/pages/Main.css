@@ -10,3 +10,8 @@
     height: 100%;
 }
 
+.account:hover{
+    scale: 1.05;
+    transition: 0.5s;
+}
+
