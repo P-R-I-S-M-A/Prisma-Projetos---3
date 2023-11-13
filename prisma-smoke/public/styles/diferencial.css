@@ -1,0 +1,124 @@
+.diferencial{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 80px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-2{
+    padding: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.d-2 .texto{
+    width: 50%;
+    padding: 40px;
+    color: #fff;
+}
+
+.d-2 .texto h1{
+    font-size: 36px;
+}
+
+.d-2 .texto p{
+    font-size: 18px;
+}
+
+.d-2 .img-1{
+    width: 50%;
+
+}
+.d-2 .img-1 img{
+    width: 100%;
+    margin: 0;
+    margin-bottom: -4px;
+}
+
+.diferencial .texto{
+    max-width: 500px;
+    width: 50%;
+    color: #fff;
+}
+
+.diferencial .texto h1{
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.diferencial .texto p{
+    font-size: 18px;
+    text-align: justify;
+}
+
+.diferencial .img{
+    position: relative;
+    max-width: 500px;
+    width: 50%;
+    padding: 40px;
+}
+
+.diferencial .img-1{
+    width: 50%;
+    padding: 20px;
+    background-color: aqua;
+}
+
+.diferencial .img-1 img{
+    position: relative;
+    width: 100%;
+    bottom: auto;
+    right: auto;
+    z-index: 990;
+}
+
+.diferencial .img .aux{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.diferencial .circulo{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: relative;
+    z-index: 990;
+}
+
+.diferencial .circulo-in{
+    position: absolute;
+    border: 8px solid rgba(0, 0, 0, 0.0);
+    border-top: 10px solid #ffffff;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: spin 5s linear infinite;
+    z-index: 990;
+  }
+
+  
+.diferencial .circulo-on{
+    position: absolute;
+    border: 8px solid rgba(0, 0, 0, 0.0);
+    border-bottom: 10px solid #ffffff;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: spin 5s linear infinite;
+    z-index: 990;
+  }
+
+.diferencial img{
+    position: absolute;
+    right: 30px;
+    bottom: 18px;
+    width: 70%;
+    min-width: 300px;
+    z-index: 0;
+}

@@ -1,0 +1,51 @@
+.propostas{
+    position: relative;
+    width: 100%;
+    padding: 100px 20px;
+    border-top: 1px solid #575757;
+}
+
+.propostas > h1 {
+    color: #fff;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.propostas .container-propostas{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.propostas .proposta-single{
+    width: calc(33.33333% - 10px);
+    background-color: var(--cor-botoes-hover);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.propostas .proposta-single:hover{
+    background-color: var(--cor-botoes);
+}
+
+.propostas .proposta-single img{
+    width: 40px;
+    margin-bottom: 20px;
+}
+
+.propostas .proposta-single h1{
+    font-size: 24px;
+    height: 80px;
+    text-align: center;
+}
+
+.propostas .proposta-single p{
+    text-align: center;
+}

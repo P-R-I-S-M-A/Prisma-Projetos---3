@@ -1,0 +1,112 @@
+main{
+    position: relative;
+    width: 100%;
+    min-height: 640px;
+    display: flex;
+}
+
+main .video-banner{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+main .video-banner video{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+main .smoke{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 20;
+}
+
+main .chamado{
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 30;
+    color: #fff;
+}
+
+main .chamado h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.chamado p{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+main .chamado a{
+    width: 100%;
+    max-width: 300px;
+}
+
+main .chamado a button, .chamado-2 button{
+    color: #fff;
+    border: none;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: var(--cor-botoes);
+}
+
+main .chamado button:hover, .chamado-2 button:hover{
+    background-color: var(--cor-botoes-hover);
+}
+
+main .arrow-bottom{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    z-index: 30;
+}
+
+@keyframes bounce{
+    0%{transform: translate(-50%, -75%);}
+    50% {transform: translate(-50%, -25%);}
+    100% {transform: translate(-50%, -75%);}
+}
+
+main .arrow-bottom img{
+    position: relative;
+    width: 100%;
+}
+
+
+.chamado-2{
+    text-align: center;
+    color: #fff;
+}
+
+.chamado-2 h2{
+    max-width: 700px;
+    font-weight: normal;
+    margin: 0 auto;
+    font-size: 26px;
+    margin-bottom: 30px;
+}

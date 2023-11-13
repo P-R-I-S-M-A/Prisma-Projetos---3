@@ -1,0 +1,45 @@
+.vantagens{
+    padding: 100px 20px;
+    border-top: 1px solid #575757;
+}
+
+.vantagens h1{
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.vantagens > p{
+    color: #fff;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.vantagens h3{
+    height: 50px;
+}
+
+.vantagens .container-vantagens, .container-beneficios{
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.vantagens .vantagem-single, .beneficio-single{
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #31383c;
+    color: #fff;
+}
+
+.vantagens .vantagem-single img, .beneficio-single img{
+    width: 40px;
+    margin-bottom: 20px;
+}

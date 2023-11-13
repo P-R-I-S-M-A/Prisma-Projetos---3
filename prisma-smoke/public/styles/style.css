@@ -1,0 +1,40 @@
+:root{
+    --cor-botoes: #272892;
+    --cor-botoes-hover:#242582;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    height: 100%;
+    background-color: #232628;
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+    padding: 100px 20px;
+    border-top: 1px solid #575757;
+}
+
+
+.cor{
+    background-color: var(--cor-botoes);
+}
+
+.a{
+    display: flex;
+}
+
+.a p{
+    margin-left: 10px;
+}
+
+

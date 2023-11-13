@@ -1,0 +1,182 @@
+@media screen and (max-width: 800px){
+    header{
+        height: 60px;
+    }
+    
+    header .logo{
+        height: 60px;
+    }
+
+    header .logo img{
+        width: 30px;
+    }
+
+    main .chamado h1{
+        font-size: 40px;
+    }
+
+    .chamado p{
+        font-size: 16px;
+    }
+
+    main .chamado a{
+        max-width: 260px;
+    }
+
+    .diferencial .texto{
+        width: 100%;
+        text-align: center;
+    }
+
+    .diferencial .texto p{
+        font-size: 16px;
+    }
+
+    .diferencial .img{
+        max-width: 400px;
+        width: 100%;
+        padding: 0px;
+        margin-bottom: 30px;
+    }
+
+    .propostas > h1 {
+        font-size: 32px;
+    }    
+
+    .quem-somos .membros{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .quem-somos .membro-single{
+        width: 33%;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 860px){
+    .d-2{
+        flex-direction: column;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .d-2 .texto{
+        width: 100%;
+        padding: 40px;
+        color: #fff;
+    }
+
+    .d-2 .texto h1{
+        margin-bottom: 20px;
+    }
+
+    .d-2 .img-1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .d-2 .img-1 img{
+        max-width: 600px;
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 840px){
+    .propostas .proposta-single{
+        width: calc(50% - 10px);
+    }
+
+    .propostas img{
+        margin: 0 auto;
+        display: block;
+    }
+
+    .mensagem h1{
+        font-size: 28px;
+    }
+
+    .mensagem p{
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .form{
+        position: relative;
+    }
+    .mensagem h1{
+        text-align: center;
+    }
+
+    .mensagem p{
+        text-align: justify;
+    }
+
+    .form .mensagem{
+        margin-right: 0;
+    }
+    .form{
+        padding: 160px 20px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .propostas{
+        padding: 50px 20px;
+    }
+
+    .propostas .container-propostas{
+        display: flex;
+        justify-content: center;
+    }
+    .propostas .proposta-single{
+        max-width: 500px;
+        width: 100%;
+
+    }
+
+    .beneficios{
+        padding: 50px 10px;
+    }
+
+    .vantagens{
+        padding: 50px 10px;
+    }
+
+    .quem-somos{
+        padding: 50px 10px;
+    }
+
+    .quem-somos .membro-single{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    footer .footer-top{
+        flex-direction: column;  
+    }
+
+    .footer-top .left, .footer-top .right{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 580px){
+    main .chamado h1{
+        font-size: 36px;
+    }
+
+    .chamado-2 h2{
+        font-size: 24px;
+    }
+
+    .d-2{
+        padding-top: 0;
+    }
+}

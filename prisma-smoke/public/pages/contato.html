@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisma</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/contato.css">
+    <link rel="stylesheet" href="../styles/mobile.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+</head>
+<body>
+
+    <header>
+        <div class="center">
+
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/prisma_branco_v2.png">
+                    <p>PRISMA</p>
+                </a>
+            </div>
+
+            <a href="../index.html"><button>Conheça-nos</button></a>
+
+        </div>
+    </header>
+
+    <div class="form">
+        <div class="mensagem">
+            <h1>Seja um dos Primeiros a Experimentar a Revolução em Gerenciamento de Projetos!</h1>
+
+            <p>Ao se inscrever, você terá acesso a recursos exclusivos, poderá influenciar o desenvolvimento do software e receberá atualizações em primeira mão sobre o lançamento. Não perca a oportunidade de elevar seus projetos a um novo patamar com PRISMA.</p>
+        </div>
+
+        <form id="formulario">
+            <h2> Formulário </h2>
+            <p>Nome</p>
+            <input type="text" class="nome_form" id="name">
+
+            <p>Email</p>
+            <input type="email" class="email_form" id="email">
+
+            <p>Telefone</p>
+            <input type="number" class="telefone_form" id="phone">
+
+            <div class="btn"><button>Cadastrar</button></div>
+        </form>
+    </div>
+
+
+    <footer>
+        <div class="footer-top">
+
+            <div class="left">
+                <div class="logo">
+                    <img src="../img/prisma_branco_v2.png">
+                    <p>PRISMA</p>
+                </div>
+
+                <b>Belém - PA</b>
+                <p>R. Augusto Corrêa, 01 - Guamá, 66075-110</p>
+            </div>
+
+            <div class="right">
+
+                <h1>Contato</h1>
+
+                <p>prisma.ia.contato@gmail.com</p>
+
+                <div class="a"><a href="https://www.instagram.com/ia_prisma?igshid=NzZlODBkYWE4Ng%3D%3D"><img src="../img/logotipo-do-instagram.png"/></a> <p>@ia_prisma</p></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>© 2023 Prisma - Todos os direitos reservados | prisma.ia.contato@gmail.com</p>
+        </div>
+
+    </footer>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+  import { getFirestore, collection, addDoc  } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAgFBh26wTWXE5l91C8kMxmrDsRidDPbEQ",
+    authDomain: "prisma-81d26.firebaseapp.com",
+    projectId: "prisma-81d26",
+    storageBucket: "prisma-81d26.appspot.com",
+    messagingSenderId: "346044704767",
+    appId: "1:346044704767:web:ac32d42881bb9a5267e9ca",
+    measurementId: "G-RQH12R9W97"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+  const auth = getAuth(app)
+
+         const form = document.getElementById('formulario');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent form submission to another page
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('phone').value;
+
+      console.log(name)
+      console.log(email)
+      console.log(message)
+
+
+      // Submit form data to Firestore using JavaScript
+      submitDataToFirestore(name, email, message);
+    });
+
+    const submitDataToFirestore = async (name, email, message) => {
+
+      const userData = {
+        name: name,
+        email: email,
+        message: message
+      };
+
+
+
+      try {
+ 
+
+          const userCredential = await createUserWithEmailAndPassword(auth, email, message);
+
+          const docRef = await addDoc(collection(db, 'Users'), userData);
+
+          alert('Cadastrado com sucesso!')
+
+        } catch (error) {
+
+            console.log('Erro ao adicionar documento: ' + error);
+        }
+
+        
+      }
+</script>    
+</body>
+</html>
+
