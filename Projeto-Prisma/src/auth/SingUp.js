@@ -20,25 +20,6 @@ export default function SingUp(){
     const [senhaRep, setSenhaRep] = useState("");
     const [erro, setErro] = useState("");
     const [loading, setLoading] = useState(false);
-
-    const addUserToFirestore = async (newUser, subCollectionProjects) => {
-
-        setLoading(true);
-
-        try {
-          const docRef = await addDoc(collection(db, 'Users'), newUser);
-
-          const docSubRef = doc(db, 'Users', docRef.id)
-          
-          await addDoc(collection(docSubRef, 'Projetos'), subCollectionProjects);
-
-        } catch (error) {
-
-            alert('Erro ao adicionar documento: ' + error);
-        }
-
-        setLoading(false)
-    }
     
 
     const handleRegistration = async () => {
@@ -58,21 +39,20 @@ export default function SingUp(){
             const user = userCredential.user;
             
             const newUser = {
-                displayName: nome,
-                email: email,
-                password: senha,
-                uid: user.uid,
-                projetos: {},
-                projetos_convites: {}
+                UID:    user.uid,
+                nome:   nome,
+                email:  email,
+                senha:  senha,
+                carga_trabalho: "",
+                cargo: "",
+                cpf: "",
+                disponibilidade: "",
+                idade: "",
             };
-    
 
+            const docRef = await addDoc(collection(db, 'users'), newUser);
 
-            const subCollectionProjects = {}
-
-            addUserToFirestore(newUser, subCollectionProjects);
-
-            navigate('/')
+            navigate('/');
 
         } catch (error) {
             setLoading(false)

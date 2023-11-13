@@ -1,11 +1,12 @@
 import '../styles/pages/Main.css';
-import '../styles/components/Account.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from "react-router-dom";
+import { collection, getDocs, where, query } from 'firebase/firestore';
+import { db } from "../App";
 import SingOut from "../auth/SingUot";
 import SidebarMin from "../components/SidebarMin";
 import Projects from "./Projects";
-import AddProjects from "./AddProjetos";
+import Insight from "./insight";
 import Tasks from "./Tasks";
 import Help from "./Help";
 import Config from "./Config";
@@ -14,11 +15,38 @@ import SidebarSearch from "../components/SidebarSearch";
 import Home from "./Home";
 import SidebarNotification from '../components/SidebarNotification';
 import Loading from '../components/Loading';
-import UsrAccount from '../components/UsrAccount';
+import Perfil from './Perfil';
 
 export default function Main(props){
+
     const navigate = useNavigate();
+    const [userId, setUserId] = useState("");
     const [loading, setLoading] = useState(false);
+
+    useEffect(()=>{
+
+      getUserUid(props.user.uid);
+
+    }, [props.auth])
+
+
+    const getUserUid = async (uid) => {
+
+      setLoading(true);
+
+      try {
+        const querySnapshot = await getDocs(query(collection(db, 'users'), where("UID", "==", uid)));
+
+        querySnapshot.forEach((doc) => {
+          setUserId(doc.id)
+        });
+        
+      } catch (error) {
+        console.error('Erro ao recuperar documentos: ', error);
+      }
+
+      setLoading(false);
+    }
 
     const handleLogout = async () => {
 
@@ -44,18 +72,16 @@ export default function Main(props){
             <SidebarNotification/>
 
             <div className="home-main">
-              <div className="account">
-                <UsrAccount />
-              </div>
-              
+                
                 <Routes>
                   
-                  <Route path="/"               element={<Home/>}/>
-                  <Route path="/projects"       element={<Projects/>} />
-                  <Route path="/add-projects"   element={<AddProjects/>} />
-                  <Route path="/tasks"          element={<Tasks/>} />
-                  <Route path="/help"           element={<Help/>} />
-                  <Route path="/config"         element={<Config/>} />
+                  <Route path="/"           element={<Home      userId={userId}/>}/>
+                  <Route path="/projects"   element={<Projects  userId={userId}/>} />
+                  <Route path="/insight"    element={<Insight   userId={userId}/>} />
+                  <Route path="/tasks"      element={<Tasks     userId={userId}/>} />
+                  <Route path="/help"       element={<Help      userId={userId}/>} />
+                  <Route path="/config"     element={<Config    userId={userId}/>} />
+                  <Route path="/perfil"     element={<Perfil    userId={userId}/>} />
 
                 </Routes>
 

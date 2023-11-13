@@ -16,14 +16,6 @@ export function OpenCloseSidebarSearch(){
     }
 }
 
-export function CloseSidebarSearch(){
-    let sidebar_max = document.querySelector('.sidebar-search');
-    let display_aux = document.querySelector('.display-aux-sidebar-search');
-
-    sidebar_max.style.left = '-600px';
-    display_aux.style.display = 'none';
-}
-
 
 export default function SidebarSearch(){
     return(

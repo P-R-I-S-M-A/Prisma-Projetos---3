@@ -1,143 +1,211 @@
 .home{
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
 }
 
-.Home .home-main{
-    width: calc(100% - 50px);
-    height: 100%;
-    margin-top: auto;
+.home header{
+    padding: 20px 0 40px 0;
+    text-align: center;
 }
 
-.home .box{
+.home main{
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.home main .card_tarefa{
+    background-color: #212121;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.home main .card_tarefa > p{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.home main .projetos_home{
+    width: calc(45% - 10px);
+    min-height: 600px;
+    background-color: #212121;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.home main .projetos_recentes{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    border-bottom: 3px solid #fff;
+    padding: 10px;
+}
+
+.home main .projetos_recentes > p, .home main .lista_projetos > p{
+    margin-bottom: 10px;
+}
+
+.home main .container_projetos_recentes{
     width: 100%;
     height: 100%;
-    margin-top: 185px;
-    margin-bottom: 0px;
-    z-index: 9;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.home .blocks{
+.home main .projeto_single{
     position: relative;
+    width: calc(50% - 10px);
+    height: 100%;
+    border-radius: 10px;
+    background-color: #131313;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.home main .projeto_single:hover{
+    background-color: #1b1b1b;
+}
+
+.home main .projeto_single > p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.home main .projetos_recentes .img_projeto{
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+}
+
+.home main .lista_projetos{
+    padding: 10px;
+}
+
+.home main .lista_projetos ul{
+    width: 100%;
+    overflow: hidden;
+    list-style: none;
+    border-radius: 10px;
+    background-color: #131313;
+}
+
+.home main .lista_projetos ul li{
+    position: relative;
+    padding:10px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-shrink: 1;
-    margin: 0 0 0 33px;
-    padding: 0;
-    width: 50%;
+    flex-direction: column;
+    cursor: pointer;
+    border-bottom: 1px solid #6b6a6a;
+}
+
+.home main .lista_projetos ul li > p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.home main .lista_projetos ul li .icon-projeto{
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.home main .lista_projetos ul li:hover{
+    background-color: #1b1b1b;
+}
+
+.home main .lista_projetos .informacoes{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
     height: 100%;
 }
 
-.home .mprojects{
-    position: relative;
-    width: 50%;
-    min-width: 300px;
-    height: 650px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    margin: 75px 0px 0px 30px;
-    margin-right: 0;
-    background: rgba(55, 15, 105, 0.44);
-    z-index: 0;
+.home main .lista_projetos .informacoes > p {
+    margin: 0 10px;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 2px solid #6b6a6a;
+    border-left: 2px solid #6b6a6a;
 }
 
-.home .mprojects:hover{
-    scale: 1.03;
-    transition: 0.5s;
+
+
+.home .tarefas_notificaçoes{
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(55% - 10px);
+    justify-content: space-between;
+    min-height: 600px;
+}
+
+.home main .tarefas_notificaçoes .tarefas_aux{
+    width: calc(60% - 10px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.home main .tarefas_notificaçoes .rodas{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home .tarefas_notificaçoes .tarefas{
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 10px;
+}
+
+.home .tarefas_notificaçoes .tarefas ul{
+    background-color: #131313;
+    list-style: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.home .tarefas_notificaçoes .tarefas ul li{
+    padding: 5px 10px;
+    border-bottom: 1px solid #6b6a6a;
     cursor: pointer;
 }
-
-.home .progress{
-    position: relative;
-    width: 60%;
-    min-width: 150px;
-    height: 330px;
-    margin-top: 75px;
-    flex-shrink: 1;
-    border-radius: 8px;
-    background: rgba(55, 15, 105, 0.44);
+.home .tarefas_notificaçoes .tarefas ul li:hover{
+    background-color: #1b1b1b;
 }
 
-.home .progress:hover{
-    scale: 1.05;
-    transition: 0.5s;
-    cursor: pointer;
+.home .tarefas_notificaçoes .tarefas ul li .informacao{
+    display: flex;
+    font-size: 12px;
 }
 
-.home .notif{
-    position: relative;
-    width: 30%;
-    min-width: 150px;
-    height: 330px;
-    flex-shrink: 1;
-    margin: 75px 0 0 33px;
-    border-radius: 8px;
-    background: rgba(55, 15, 105, 0.44);
+.home .tarefas_notificaçoes .tarefas ul li > p{
+    margin-bottom: 5px;
 }
 
-.home .notif:hover{
-    scale: 1.05;
-    transition: 0.5s;
-    cursor: pointer;
+.home .tarefas_notificaçoes .tarefas ul li .informacao p{
+    border-right: 1px solid #6b6a6a;
+    padding: 0 10px;
 }
 
-.home .bLeft{
-    position: relative;
-    width: 45%;
-    min-width: 150px;
-    height: 280px;
-    flex-shrink: 1;
-    margin-top: 39px;
-    margin-right: 33px;
-    border-radius: 8px;
-    background: rgba(55, 15, 105, 0.44);
+.home .tarefas_notificaçoes .notificacoes{
+    width: calc(40% - 10px);
+   
 }
 
-.home .bLeft:hover{
-    scale: 1.05;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.home .bRight{
-    position: relative;
-    width: 45%;
-    min-width: 150px;
-    height: 280px;
-    flex-shrink: 1;
-    margin-top: 39px;
-    border-radius: 8px;
-    background: rgba(55, 15, 105, 0.44)
-}
-
-.home .bRight:hover{
-    scale: 1.05;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-@media(max-width: 1150px){
-    .home .blocks{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .home .box{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .home .blocks .notif{
-        margin-left: 0;
-    }
-
-    .home .blocks .bLeft{
-        margin-right: 0;
-    }
-
+.home .tarefas_notificaçoes .tarefas_dia, .home .tarefas_notificaçoes .tarefas_semana{
+    width: calc(50% - 10px);
+    height: 250px;
 
 }

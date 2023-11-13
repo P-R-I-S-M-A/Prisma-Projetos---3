@@ -1,5 +1,6 @@
 .main{
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     width: 100%;
     color: #fff;
@@ -8,14 +9,5 @@
 .main .home-main{
     width: calc(100% - 50px);
     height: 100%;
-}
-
-.account{
-    z-index: 8;
-}
-
-.account:hover{
-    scale: 1.05;
-    transition: 0.5s;
 }
 

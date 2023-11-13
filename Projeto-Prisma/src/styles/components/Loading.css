@@ -2,6 +2,8 @@
 .loading-container {
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,6 +11,7 @@
     height: 100vh;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 500;
   }
   
   .loader {
@@ -25,7 +28,7 @@
     100% { transform: rotate(360deg); }
   }
   
-  p {
+  .loading-container p {
     margin-top: 10px;
     color: #e5e5e5;
   }

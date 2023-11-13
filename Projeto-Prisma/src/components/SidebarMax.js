@@ -1,11 +1,12 @@
 import '../styles/components/SidebarMax.css';
-import { Link, useNavigate } from "react-router-dom";
-import { TbMenu2, TbSearch, TbFolder, TbFolderPlus, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome, TbChartDonut } from "react-icons/tb";
+import { Link } from "react-router-dom";
+import { TbSearch, TbFolder, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome } from "react-icons/tb";
+import { VscGraph } from "react-icons/vsc";
 import { RiQuestionLine } from 'react-icons/ri';
-import Logo from '../assents/img/prisma_branco_v2.png';
+import Logo from '../assents/img/logo.png';
 import LogoPrima from './LogoPrisma';
 import { OpenCloseSidebarSearch } from './SidebarSearch';
-import SidebarNotification, { OpenCloseSidebarNotification } from './SidebarNotification';
+import { OpenCloseSidebarNotification } from './SidebarNotification';
 
 export function OpenCloseSidebarMax(){
     let sidebar_max = document.querySelector('.sidebar-max');
@@ -21,15 +22,6 @@ export function OpenCloseSidebarMax(){
     }
 }
 
-export function CloseSidebarMax(){
-    let sidebar_max = document.querySelector('.sidebar-max');
-    let display_aux = document.querySelector('.display-aux-sidebar-max');
-
-    sidebar_max.style.left = '-260px';
-    display_aux.style.display = 'none';
-}
-
-
 export default function SidebarMax(props){
 
     return(
@@ -39,19 +31,19 @@ export default function SidebarMax(props){
             <div className='sidebar-max'>
                 <ul className='menu'>
                     
-                    <li className='li' ><LogoPrima/></li>
+                    <li className='li'><LogoPrima/></li>
 
                     <li className='li' onClick={OpenCloseSidebarSearch}><TbSearch/><p>Pesquisar</p></li>
 
-                    <Link className='li' to='/home' ><TbHome/><p>Home</p></Link>
+                    <Link className='li' onClick={OpenCloseSidebarMax} to='/home' ><TbHome/><p>Home</p></Link>
 
-                    <Link className='li' to='/home/projects'><TbFolder/><p>Projetos</p></Link>
+                    <Link className='li' onClick={OpenCloseSidebarMax} to='/home/projects'><TbFolder/><p>Projetos</p></Link>
 
-                    <Link className='li' to='/home/add-projects'><TbChartDonut/><p>Estatísticas</p></Link>
+                    <Link className='li' onClick={OpenCloseSidebarMax} to='/home/tasks'><TbClipboardList/><p>Tarefas</p></Link>
 
-                    <Link className='li' to='/home/tasks'><TbClipboardList/><p>Tarefas</p></Link>
+                    <li className='li'  onClick={OpenCloseSidebarNotification}><TbBell/><p>Notificações</p></li>
 
-                    <li className='li' onClick={OpenCloseSidebarNotification}><TbBell/><p>Notificações</p></li>
+                    <Link className='li' onClick={OpenCloseSidebarMax} to='/home/insight'><VscGraph/><p>Insight</p></Link>
 
                 </ul>
 
@@ -59,9 +51,9 @@ export default function SidebarMax(props){
 
                     <li className='li'><img src={Logo}/><p>Planos</p></li>
 
-                    <Link className='li' to='/home/help'><RiQuestionLine/><p>Suporte</p></Link>
+                    <Link className='li' onClick={OpenCloseSidebarMax} to='/home/help'><RiQuestionLine/><p>Suporte</p></Link>
 
-                    <Link className='li' to='/home/config'><TbSettings/><p>Configurações</p></Link>
+                    <Link className='li' onClick={OpenCloseSidebarMax} to='/home/config'><TbSettings/><p>Configurações</p></Link>
 
                     <li className='li sair' onClick={props.btnLogout}><TbLogout/><p>Sair</p></li>
                 </ul>

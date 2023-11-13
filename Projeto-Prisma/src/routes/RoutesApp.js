@@ -45,11 +45,11 @@ export default function RoutesApp(){
                 
                     <Routes>
 
-                        <Route exact path="/home/*"   element={<PrivateRoute component={Main} authenticated={authenticated} usuario={usuario}/>} />
-                        <Route path="/"             element={<SingIn />} />
-                        <Route path="/login"        element={<SingIn />} />
-                        <Route path="*"             element={<SingIn />} />
-                        <Route exact path="/singup" element={<SingUp />} />
+                        <Route exact path="/home/*"     element={<PrivateRoute component={Main} authenticated={authenticated} usuario={usuario}/>} />
+                        <Route path="/"                 element={<SingIn />} />
+                        <Route path="/login"            element={<SingIn />} />
+                        <Route path="*"                 element={<SingIn />} />
+                        <Route exact path="/singup"     element={<SingUp />} />
                         
                     </Routes>
 

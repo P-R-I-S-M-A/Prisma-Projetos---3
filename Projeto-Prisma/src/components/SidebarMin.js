@@ -1,6 +1,7 @@
 import '../styles/components/SidebarMin.css';
 import { Link, useNavigate } from "react-router-dom";
-import { TbMenu2, TbSearch, TbFolder, TbFolderPlus, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome, TbChartDonut } from "react-icons/tb";
+import { TbUser, TbMenu2, TbSearch, TbFolder, TbClipboardList, TbSettings, TbBell, TbLogout, TbHome } from "react-icons/tb";
+import { VscGraph } from "react-icons/vsc";
 import { RiQuestionLine } from 'react-icons/ri';
 import Logo from '../assents/img/prisma_branco_v2.png';
 import { OpenCloseSidebarMax } from './SidebarMax';
@@ -27,11 +28,14 @@ export default function SidebarMin(props){
 
                     <Link className='li' title='Projetos' to='/home/projects'><TbFolder/></Link>
 
-                    <Link className='li' title='Estatísticas' to='/home/add-projects'><TbChartDonut/></Link>
-
                     <Link className='li' title='Tarefas' to='/home/tasks'><TbClipboardList/></Link>
 
                     <li className='li' title='Notificações' onClick={OpenCloseSidebarNotification}><TbBell/></li>
+
+                    <Link className='li' title='Relatorios' to='/home/insight'><VscGraph/></Link>
+
+                    <Link className='li' title='Perfil' to='/home/perfil'><TbUser/></Link>
+
 
                 </ul>
 
