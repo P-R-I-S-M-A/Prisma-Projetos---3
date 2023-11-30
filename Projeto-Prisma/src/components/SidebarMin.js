@@ -28,8 +28,6 @@ export default function SidebarMin(props){
 
                     <Link className='li' title='Projetos' to='/home/projects'><TbFolder/></Link>
 
-                    <Link className='li' title='Tarefas' to='/home/tasks'><TbClipboardList/></Link>
-
                     <li className='li' title='Notificações' onClick={OpenCloseSidebarNotification}><TbBell/></li>
 
                     <Link className='li' title='Relatorios' to='/home/insight'><VscGraph/></Link>

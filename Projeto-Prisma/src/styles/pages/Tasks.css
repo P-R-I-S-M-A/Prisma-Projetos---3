@@ -1,0 +1,156 @@
+.tarefas{
+    padding: 0 20px;
+}
+
+.tarefas header{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.tarefas header .container-type{
+    display: flex;
+    background-color: blueviolet;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.tarefas header .container-type .type{
+    background-color: rgb(114, 41, 181);
+    width: 80px;
+    margin: 0 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.tarefas header .container-type .type:hover{
+    background-color: rgb(94, 30, 154);
+}
+
+.tarefas .nome_projeto{
+    border-bottom: 2px solid #fff;
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.tarefas .container_cards{
+    display: inline-block;
+
+}
+
+.tarefas .container_cards .card.mais{
+
+}
+
+.tarefas .container_cards .mais .add{
+    color: #fff;
+    font-weight: normal;
+    border: none;
+    justify-content: left;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    
+}
+
+.tarefas .container_cards .mais:hover{
+    cursor: pointer;
+    background-color: #260f43;
+}
+
+.tarefas .container_cards .card{
+    display: inline-block;
+    vertical-align: top;
+    background-color: antiquewhite;
+    width: 300px;
+    margin: 0 10px;
+    background-color: #310e5c;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.tarefas .container_cards .card > p{
+    border-bottom: 2px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom:5px; 
+    margin-bottom: 10px;
+}
+
+.tarefas .container_cards .card ul{
+    list-style: none;
+    
+}
+
+.tarefas .container_cards .card li{
+    background-color: #260f43;
+    border-radius: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.tarefas .container_cards .card li > p{
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.tarefas .container_cards .card li > p > div{
+    margin-left: 8px;
+    display: flex;
+}
+
+.tarefas .container_cards .card li > p img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: -5px;
+}
+
+.tarefas .container_cards .card li .info{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 4px 10px;
+    background-color: #1d0c31;
+    font-size: 12px;
+}
+.tarefas .container_cards .card li .info p{
+    margin-right: 10px;
+}
+
+.tarefas .container_cards .card li .info .icon{
+    margin-right: 10px;
+}
+
+.tarefas .container_cards .card li .info .estado{
+    color: rgb(16, 151, 255);
+}
+
+.tarefas .container_cards .card li .info .check{
+    margin-right: 5px;
+
+}
+
+.tarefas .container_cards .card li .info .p_check{
+    display: flex;
+    align-items: center;
+}
+
+.tarefas .container_cards .card li:hover{
+    background-color: #1d0c31;
+}

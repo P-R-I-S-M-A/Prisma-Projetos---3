@@ -3,20 +3,17 @@ import { getDoc, doc } from 'firebase/firestore';
 import { db } from "../App";
 import Loading from '../components/Loading';
 import '../styles/pages/Projects.css';
+import Storage from '../components/Storage';
 
 export default function Projects(props){
 
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(false);
-
     
-    useEffect(()=>{
+    
 
-        if(props.userId != ''){
-            getUserHome(props.userId)
-        }
 
-    },[props.userId])
+  
 
     const getUserHome = async (id) => {
 
@@ -44,6 +41,7 @@ export default function Projects(props){
         <div className="projects">
             
             projetos
+            <Storage/>
 
             {loading === true ?  <Loading/> : <></>}
         </div>

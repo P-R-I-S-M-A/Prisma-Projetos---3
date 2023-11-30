@@ -20,32 +20,36 @@ import Perfil from './Perfil';
 export default function Main(props){
 
     const navigate = useNavigate();
-    const [userId, setUserId] = useState("");
     const [loading, setLoading] = useState(false);
+    const [IdUsuario_FB, setIdUsuario_FB] = useState();
 
     useEffect(()=>{
 
-      getUserUid(props.user.uid);
+        getUserUid(props.user.uid);
 
-    }, [props.auth])
+    }, [props.user.uid])
 
 
     const getUserUid = async (uid) => {
 
-      setLoading(true);
+        setLoading(true);
 
-      try {
-        const querySnapshot = await getDocs(query(collection(db, 'users'), where("UID", "==", uid)));
+        try {
+            const querySnapshot = await getDocs(query(collection(db, 'users'), where("UID", "==", uid)));
 
-        querySnapshot.forEach((doc) => {
-          setUserId(doc.id)
-        });
-        
-      } catch (error) {
-        console.error('Erro ao recuperar documentos: ', error);
-      }
+            querySnapshot.forEach((doc) => {
+              
+                setIdUsuario_FB(doc.id);
 
-      setLoading(false);
+            });
+
+        } catch (error) {
+
+          console.error('Erro ao recuperar documentos: ', error);
+          
+        }
+
+        setLoading(false)
     }
 
     const handleLogout = async () => {
@@ -63,6 +67,7 @@ export default function Main(props){
       setLoading(false);
     }
 
+
     return(
         <div className = 'main'>
             
@@ -75,13 +80,14 @@ export default function Main(props){
                 
                 <Routes>
                   
-                  <Route path="/"           element={<Home      userId={userId}/>}/>
-                  <Route path="/projects"   element={<Projects  userId={userId}/>} />
-                  <Route path="/insight"    element={<Insight   userId={userId}/>} />
-                  <Route path="/tasks"      element={<Tasks     userId={userId}/>} />
-                  <Route path="/help"       element={<Help      userId={userId}/>} />
-                  <Route path="/config"     element={<Config    userId={userId}/>} />
-                  <Route path="/perfil"     element={<Perfil    userId={userId}/>} />
+                  <Route path="/"              element={<Home ID_usuario_FB={IdUsuario_FB}/>}/>
+                  <Route path="/projects/*"    element={<Projects  />} />
+                  <Route path="/insight"       element={<Insight   />} />
+                  <Route path="projects/tasks" element={<Tasks     />} />
+                  <Route path="/help"          element={<Help      />} />
+                  <Route path="/config"        element={<Config    />} />
+                  <Route path="/perfil"        element={<Perfil    />} />
+                  <Route path="/nome"          element={<Perfil   />} />
 
                 </Routes>
 

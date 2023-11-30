@@ -1,0 +1,224 @@
+.projetos_tarefas_urgentes{
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #191E1F;
+}
+
+.projetos_tarefas_urgentes .tarefas_urgentes{
+    width: 100%;
+    height: 290px;
+}
+
+.projetos_tarefas_urgentes h3{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-weight: normal;
+    height: 40px;
+    border-bottom: 2px solid #fff;
+}
+
+.projetos_tarefas_urgentes .container_tarefas_urgentes, 
+.projetos_tarefas_urgentes .container_projetos_recentes{
+    display: flex;
+    width: 100%;
+
+    padding: 10px;
+}
+
+.projetos_tarefas_urgentes ul, .projetos_tarefas_urgentes .container_projetos_recentes ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.projetos_tarefas_urgentes .container_tarefas_urgentes li, 
+.projetos_tarefas_urgentes .container_projetos_recentes li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(50% - 5px);
+    margin: 5px 0;
+    border-radius: 10px;
+    background-color: #3A4345;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-box-shadow: -1px 1px 1px 0.5px rgba(0,0,0,0.5);
+    -moz-box-shadow: -1px 1px 2px 0.5px rgba(0,0,0,0.5);
+    box-shadow: -1px 1px 2px 0.5px rgba(0,0,0,0.5)
+}
+
+.projetos_tarefas_urgentes li:hover{
+    background-color: rgb(68, 73, 74);
+}
+
+.projetos_tarefas_urgentes li .titulo_membros,
+.projetos_tarefas_urgentes .container_projetos_recentes .nome_projeto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 50px;
+    padding: 5px 10px;
+}
+
+.projetos_tarefas_urgentes li .titulo_membros .status_tarefa{
+    width: 50px;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.projetos_tarefas_urgentes li .titulo_membros p{
+    width: 100%;
+    height: calc(100% - 8px);
+    font-size: 13px;
+}
+
+.projetos_tarefas_urgentes li .none{
+    display: none;
+}
+
+.projetos_tarefas_urgentes li .membros_tarefas_urgentes,
+.projetos_tarefas_urgentes li .membros_projeto_urgentes{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 22px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.projetos_tarefas_urgentes li .informaçoes_tarefa .membros_tarefas_urgentes img,
+.projetos_tarefas_urgentes .container_projetos_recentes .info_projeto .membros_projeto_urgentes img,
+.projetos_tarefas_urgentes li .informaçoes_tarefa .mais_membros,
+.projetos_tarefas_urgentes li .info_projeto .mais_membros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: -8px;
+}
+
+.projetos_tarefas_urgentes li .informaçoes_tarefa .mais_membros,
+.projetos_tarefas_urgentes li .info_projeto .mais_membros{
+    background-color: rgba(0,0,0,0.8);
+    font-size: 10px;
+}
+
+.projetos_tarefas_urgentes li .informaçoes_tarefa .membros_tarefas_urgentes img:first-of-type,
+.projetos_tarefas_urgentes li .info_projeto .membros_projeto_urgentes img:first-of-type{
+    margin-left: 0;
+}
+
+
+.projetos_tarefas_urgentes .informaçoes_tarefa,
+.projetos_tarefas_urgentes .container_projetos_recentes .info_projeto{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: 5px 10px 0px 5px;
+    font-size: 13px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.projetos_tarefas_urgentes .informaçoes_tarefa .icon_info,
+.projetos_tarefas_urgentes .info_projeto .icon_info{
+    display: flex;
+    height: 22px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    padding: 0 4px;
+    margin-bottom: 5px;
+    min-width: 20px;
+    border-radius: 4px;
+    background-color: #370F69;
+}
+
+.projetos_tarefas_urgentes .informaçoes_tarefa .icon_info p{
+    height: 20px;
+}
+
+.projetos_tarefas_urgentes .informaçoes_tarefa .icon_info img,
+.projetos_tarefas_urgentes .container_projetos_recentes .info_projeto .icon_img{
+    height: 100%;
+    padding: 5px;
+}
+
+
+/*#################################################################################################################################*/
+
+.projetos_tarefas_urgentes .projetos_recentes{
+    width: 100%;
+    height: calc(100% - 290px);
+}
+
+.projetos_tarefas_urgentes .container_projetos_recentes{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+
+}
+
+.projetos_tarefas_urgentes .container_projetos_recentes ul{
+    width: calc(50% - 5px);
+}
+
+.projetos_tarefas_urgentes .container_projetos_recentes .projeto_mais_recente li{
+    height: 210px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.projetos_tarefas_urgentes .container_projetos_recentes li{
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    font-size: 13px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.projetos_tarefas_urgentes .container_projetos_recentes li .info_projeto p{
+    height: 20px;
+    padding: 4px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.projetos_tarefas_urgentes .container_projetos_recentes .nome_projeto,
+.projetos_tarefas_urgentes .container_projetos_recentes .info_projeto{
+    position: relative;
+}
+
+.projetos_tarefas_urgentes .container_projetos_recentes .shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.projetos_tarefas_urgentes .container_projetos_recentes .shadow:hover{
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+
+
+
