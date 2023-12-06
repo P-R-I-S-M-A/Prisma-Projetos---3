@@ -1,3 +1,219 @@
 .projects{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
     padding: 0 20px;
+}
+
+.projects .header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.projects .header button{
+    font-size: 14px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #323a3c;
+    border: none;
+    -webkit-box-shadow: -1px 1px 1px 0.5px rgba(0,0,0,0.5);
+    -moz-box-shadow: -1px 1px 2px 0.5px rgba(0,0,0,0.5);
+    box-shadow: -1px 1px 2px 0.5px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.projects .header button:hover{
+    filter: brightness(0.85);
+}
+
+.projects .header .icon{
+    font-size: 22px;
+}
+.projects .main{
+    width: 100%;
+    height: calc(100% - 100px);
+    border-radius: 10px 10px 0 0;
+    background-color: #191E1F;
+    min-height: calc(100% - 100px);
+    overflow: auto;
+}
+
+.projects .projetos_recentes{
+    width: 100%;
+    padding: 10px;
+    height: 300px;
+}
+
+.projects h3{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+.projects .container_p_recente{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.projects ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+
+.projects li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(25% - 10px);
+    height: 200px;
+    margin: 5px 0;
+    border-radius: 10px;
+    background-color: #535e61;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-box-shadow: -1px 1px 1px 0.5px rgba(0,0,0,0.5);
+    -moz-box-shadow: -1px 1px 2px 0.5px rgba(0,0,0,0.5);
+    box-shadow: -1px 1px 2px 0.5px rgba(0,0,0,0.5);
+    position: relative;
+    font-size: 13px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left:10px;
+}
+
+
+
+.projects li:hover{
+    background-color: rgb(68, 73, 74);
+    filter: brightness(0.9);
+}
+
+.projects .shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.projects .nome_projeto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 50px;
+    padding: 5px 10px;
+}
+
+.projects .nome_projeto p{
+    position: relative;
+}
+
+.projects .info_projeto{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: 5px 10px 0px 5px;
+    font-size: 13px;
+    background-color: rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.projects .info_projeto p{
+    height: 20px;
+    padding: 4px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.projects .membros_projeto{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 22px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.projects .membros_projeto img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: -8px;
+}
+
+.projects .membros_projeto img:first-of-type{
+    margin-left: 0;
+}
+
+.projects .mais_membros{
+    background-color: rgba(0,0,0,0.8);
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: -8px;
+}
+
+.projects .none{
+    display: none;
+}
+
+.projects .icon_info{
+    display: flex;
+    height: 22px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    padding: 0 4px;
+    margin-bottom: 5px;
+    min-width: 20px;
+    border-radius: 4px;
+    background-color: #370F69;
+}
+
+.projects .icon_info p{
+    height: 20px;
+}
+
+.projects .icon_info img{
+    height: 100%;
+    padding: 5px;
+}
+
+.projects .todos_projetos{
+    width: 100%;
+    padding: 10px;
+}
+
+.projects .todos_projetos li{
+    height: 100px;
 }

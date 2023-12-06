@@ -193,6 +193,10 @@
     background-size: cover;
 }
 
+.projetos_tarefas_urgentes .container_projetos_recentes li:hover{
+    filter: brightness(0.8);
+}
+
 
 .projetos_tarefas_urgentes .container_projetos_recentes li .info_projeto p{
     height: 20px;
@@ -212,10 +216,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
-}
-
-.projetos_tarefas_urgentes .container_projetos_recentes .shadow:hover{
-    background-color: rgba(0,0,0,0.4);
 }
 
 

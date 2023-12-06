@@ -5,38 +5,13 @@ import '../styles/pages/Home.css';
 import Loading from '../components/Loading';
 import ProjetosTarefasRecentes from './Home/Proj_Tare_Re';
 import Dashboard from './Home/Dashboard';
+import CaixaNotificacoes from './Home/Caixa_Notifcacoes';
+import Sugestoes from './Home/Sugestoes';
+import Planner from './Home/Planner';
 
 export default function Home(props){
 
     const [loading, setLoading] = useState(false);
-    const [user_FB, setUser_FB] = useState([]);
-    
-    useEffect(()=>{
-        if(props.ID_usuario_FB !== undefined){
-
-            getInfoUser(props.ID_usuario_FB)
-            
-        }
-    },[props.ID_usuario_FB])
-
-    const getInfoUser = async (id) => {
-
-        setLoading(true);
-
-        try {
-
-            const querySnapshot = await getDoc(doc(db, 'users', id))
-
-            setUser_FB(querySnapshot.data())
-          
-        } catch (error) {
-
-            console.error('Erro ao recuperar documentos: ', error);
-
-        }
-
-        setLoading(false);
-    }
 
     function diaDeHoje(){
         const dataAtual = new Date();
@@ -58,22 +33,27 @@ export default function Home(props){
         return `${diaSemana}, ${dia} ${mes}`;
     }
 
-
     return(
         <div className="home">
 
             <header>
-                    <h1>Bem-vindo de volta, {user_FB.nome}</h1>
+                    <h1>Bem-vindo de volta, {props.prop.user_info.nome}</h1>
                     <p>{diaDeHoje()}</p>
             </header>   
 
             <main>
                 <div className='w50'>
-                    <ProjetosTarefasRecentes ID_usuario_FB={props.ID_usuario_FB}/>
+                    <ProjetosTarefasRecentes prop={props.prop}/>
                 </div>
 
                 <div className='w50'>
-                    <Dashboard ID_usuario_FB={props.ID_usuario_FB}/>
+                    <Dashboard etiquetas={props.etiquetas}/>
+
+                    <CaixaNotificacoes notificacoes={props.notificacoes}/>
+
+                    <Sugestoes/>
+
+                    <Planner/>
                 </div>
             </main>
 

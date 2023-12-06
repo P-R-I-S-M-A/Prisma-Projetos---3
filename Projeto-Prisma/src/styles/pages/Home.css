@@ -27,6 +27,11 @@
 }
 
 .home main .w50{
-    width: calc(50% - 10px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(50% - 5px);
     height: 100%;
 }
+

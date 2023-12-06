@@ -13,7 +13,6 @@ import { OpenCloseSidebarNotification } from './SidebarNotification';
 export default function SidebarMin(props){
     const navigate = useNavigate();
 
-
     return(
         <>
             <div className='Side-aux'></div>

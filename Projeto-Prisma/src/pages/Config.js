@@ -29,7 +29,7 @@ export default function Config(){
 
     function a(){
         var valorData = document.getElementById("dataEscolhida").value;
-
+      console.log(valorData)
       // Cria um objeto Date com a data escolhida
       var data = new Date(valorData + "T00:00:00"); // Adiciona o tempo para garantir a interpretação correta
 
@@ -49,7 +49,7 @@ export default function Config(){
 
     return(
         <div className="projects">
-           <input type="date" id="dataEscolhida" onChange={a} name="dataEscolhida"/>
+           <input type="date"onChange={a} name="dataEscolhida"/>
         </div>
     )
 }

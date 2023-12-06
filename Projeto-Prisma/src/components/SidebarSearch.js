@@ -16,7 +16,6 @@ export function OpenCloseSidebarSearch(){
     }
 }
 
-
 export default function SidebarSearch(){
     return(
         <>

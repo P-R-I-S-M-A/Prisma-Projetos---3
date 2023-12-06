@@ -1,0 +1,178 @@
+.criar_projeto{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.criar_projeto .container_criar_pro{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 96%;
+    max-width: 500px;
+    min-height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #323a3c;
+}
+.criar_projeto .btn_fechar{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.criar_projeto .btn_fechar:hover{
+    background-color: rgb(41, 45, 48);
+}
+.criar_projeto .container_criar_pro h3{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-weight: normal;
+    height: 40px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+.criar_projeto .img_capa{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 150px;
+    background-color: rgb(47, 19, 75);
+}
+.criar_projeto .img_capa .img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.criar_projeto .img_capa img{
+    width: 100%;
+}
+
+.criar_projeto form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+.criar_projeto p{
+    width: 100%;
+    font-size: 14px;
+    padding-left: 5px;
+    margin-bottom: 2px;
+}
+.criar_projeto input[type="text"], .criar_projeto input[type='email']{
+    width: 100%;
+    height: 32px;
+    outline: none;
+    padding: 8px;
+    border: none;
+    color: #fff;
+    background-color: #565e60;
+    margin-bottom: 10px;
+}
+
+.criar_projeto input[type='email']{
+    width: calc(100% - 32px);
+}
+
+.criar_projeto .enviar_convite{
+    width: 32px;
+    height: 32px;
+    background-color: #565e60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    
+}
+.criar_projeto .enviar_convite:hover{
+    background-color: #4b4f50;
+}
+
+.criar_projeto input[type='email']::placeholder {
+    color: #bebebe; /* Substitua pela cor desejada */
+  }
+.criar_projeto input[type="datetime-local"]{
+    width: calc(50% - 5px);
+    height: 32px;
+    outline: none;
+    padding: 8px;
+    border: none;
+    color: #fff;
+    background-color: #565e60;
+    margin-bottom: 10px;
+}
+
+.criar_projeto input[type="file"]{
+    display: none;
+}
+
+.criar_projeto label{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    width: calc(50% - 5px);
+    height: 32px;
+    background-color: #565e60;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.criar_projeto label .icon_file{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
+.criar_projeto .input-file {
+    background-color: rgb(61, 84, 84);
+}
+
+.criar_projeto .btn_criar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.criar_projeto .btn_criar div{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    border: none;
+    color: #fff;
+    font: 14px  ;
+    background-color: #370F69;
+    cursor: pointer;
+}
+
+.criar_projeto .btn_criar div:hover{
+    filter: brightness(0.9);
+}
+
+.criar_projeto .btn_criar div .criando_projeto {
+    background-color: aqua;
+}
+

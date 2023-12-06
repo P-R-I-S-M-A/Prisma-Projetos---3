@@ -1,9 +1,16 @@
+import React, { useState, useEffect } from 'react';
+
+function SeuComponente(props) {
+  
+
+  console.log(props.prop.mapa.cardComTarefasMap)
+
+  return (
+    <div>
 
 
-export default function Help(){
-    return(
-        <div className="projects">
-           Help
-        </div>
-    )
+    </div>
+  );
 }
+
+export default SeuComponente;

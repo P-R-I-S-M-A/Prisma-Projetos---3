@@ -1,0 +1,17 @@
+.planner{
+    width: calc(50% - 5px);
+    height: 280px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #191E1F;
+    padding: 10px;
+}
+
+.planner h3{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-weight: normal;
+    height: 40px;
+    border-bottom: 2px solid #fff;
+}
